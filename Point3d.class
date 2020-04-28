@@ -1,0 +1,61 @@
+package task3;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class Point3d {
+    private double xCoord;
+    private double yCoord;
+    private double zCoord;
+
+    public static void main(String[] var0) {
+        System.out.println();
+    }
+
+    public Point3d(double var1, double var3, double var5) {
+        this.xCoord = var1;
+        this.yCoord = var3;
+        this.zCoord = var5;
+    }
+
+    public Point3d() {
+        this(0.0D, 0.0D, 0.0D);
+    }
+
+    public double distanceTo(Point3d var1) {
+        return BigDecimal.valueOf(Math.sqrt(Math.pow(this.xCoord - var1.getX(), 2.0D) + Math.pow(this.yCoord - var1.getY(), 2.0D) + Math.pow(this.zCoord - var1.getZ(), 2.0D))).setScale(2, RoundingMode.HALF_UP).doubleValue();
+    }
+
+    public boolean equals(Object var1) {
+        if (!(var1 instanceof Point3d)) {
+            return false;
+        } else {
+            Point3d var2 = (Point3d)var1;
+            return this.xCoord == var2.getX() && this.yCoord == var2.getY() && this.zCoord == var2.getZ();
+        }
+    }
+
+    public double getX() {
+        return this.xCoord;
+    }
+
+    public double getY() {
+        return this.yCoord;
+    }
+
+    public double getZ() {
+        return this.zCoord;
+    }
+
+    public void setX(double var1) {
+        this.xCoord = var1;
+    }
+
+    public void setY(double var1) {
+        this.yCoord = var1;
+    }
+
+    public void setZ(double var1) {
+        this.zCoord = var1;
+    }
+}
